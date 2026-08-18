@@ -557,8 +557,8 @@ function App() {
         </div>
 
         {view === 'marginal' && (
-          <ResponsiveContainer width="100%" height={340}>
-            <LineChart data={curve} margin={{ top: 30, right: 30, left: 10, bottom: 0 }}>
+          <ResponsiveContainer width="100%" height={390}>
+            <LineChart data={curve} margin={{ top: 30, right: 35, left: 10, bottom: 10 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
               <XAxis dataKey="income" tickFormatter={v => `£${v / 1000}k`} />
               <YAxis tickFormatter={v => `${v}%`} domain={[0, 75]} />
@@ -566,7 +566,7 @@ function App() {
                 formatter={(v, name) => [`${v}%`, name]}
                 labelFormatter={v => `Gross Income: ${money(v)}`}
               />
-              <Legend verticalAlign="top" height={36} />
+              <Legend verticalAlign="bottom" height={36} />
               <ReferenceLine
                 x={100000}
                 stroke="#dc2626"
@@ -615,8 +615,8 @@ function App() {
         )}
 
         {view === 'bands' && (
-          <ResponsiveContainer width="100%" height={340}>
-            <BarChart data={bandBars} margin={{ top: 25, right: 30, left: 10, bottom: 0 }}>
+          <ResponsiveContainer width="100%" height={390}>
+            <BarChart data={bandBars} margin={{ top: 25, right: 30, left: 10, bottom: 10 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
               <XAxis dataKey="name" />
               <YAxis tickFormatter={money} />
@@ -651,8 +651,8 @@ function App() {
         )}
 
         {view === 'breakdown' && (
-          <ResponsiveContainer width="100%" height={340}>
-            <BarChart data={bars} margin={{ top: 25, right: 30, left: 10, bottom: 0 }}>
+          <ResponsiveContainer width="100%" height={390}>
+            <BarChart data={bars} margin={{ top: 25, right: 30, left: 10, bottom: 10 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
               <XAxis dataKey="name" />
               <YAxis tickFormatter={money} />
