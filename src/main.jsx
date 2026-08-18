@@ -558,25 +558,40 @@ function App() {
 
         {view === 'marginal' && (
           <ResponsiveContainer width="100%" height={340}>
-            <LineChart data={curve} margin={{ top: 10, right: 30, left: 10, bottom: 0 }}>
+            <LineChart data={curve} margin={{ top: 30, right: 30, left: 10, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
               <XAxis dataKey="income" tickFormatter={v => `£${v / 1000}k`} />
-              <YAxis tickFormatter={v => `${v}%`} domain={[0, 70]} />
+              <YAxis tickFormatter={v => `${v}%`} domain={[0, 75]} />
               <Tooltip
                 formatter={(v, name) => [`${v}%`, name]}
                 labelFormatter={v => `Gross Income: ${money(v)}`}
               />
+              <Legend verticalAlign="top" height={36} />
               <ReferenceLine
                 x={100000}
                 stroke="#dc2626"
                 strokeDasharray="4 4"
-                label={{ value: '£100k Trap Start', fill: '#dc2626', position: 'top', fontSize: 11 }}
+                label={{
+                  value: '£100k Trap Start',
+                  fill: '#dc2626',
+                  position: 'top',
+                  fontSize: 11,
+                  fontWeight: 700,
+                  dy: -4,
+                }}
               />
               <ReferenceLine
                 x={125140}
                 stroke="#dc2626"
                 strokeDasharray="4 4"
-                label={{ value: '£125,140 PA Gone', fill: '#dc2626', position: 'top', fontSize: 11 }}
+                label={{
+                  value: '£125,140 PA Gone',
+                  fill: '#dc2626',
+                  position: 'top',
+                  fontSize: 11,
+                  fontWeight: 700,
+                  dy: -4,
+                }}
               />
               <Line
                 type="monotone"
